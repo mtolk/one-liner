@@ -23,7 +23,7 @@ In the current version(0.1.0) one-liner contains 1 function: fit-to-width that c
 Here we have a block of specific dimensions. Using fit-to-width will change the font-size to the content passed 
 to fit-to-width will fit the full width without wrapping the content.
 
-![Example1](./img/example1.png "Example1 of Typst one-liner: fit-to-width")
+![Example1](./example1.png "Example1 of Typst one-liner: fit-to-width")
 
 ## fit-to-width function
 Besides content the function has two parameters:
