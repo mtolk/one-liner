@@ -1,6 +1,6 @@
 
-/*#import "lib.typ": fit-to-width*/
-#import "@local/one-liner:0.1.0": fit-to-width
+#import "lib.typ": fit-to-width
+//#import "@local/one-liner:0.1.0": fit-to-width
 
 useful for slides or titles use full width
 Things that need to be as big as possible to grab attention.
@@ -48,3 +48,22 @@ There is also a default max size, which you can override as done here: 100pt.
 #align(center + bottom ,fit-to-width( max-text-size: 70pt,   upper[_experiment_]))
 
 #fit-to-width[] /*test case to see what happens if you add empty content*/
+
+If there is a fixed height, it will also take that into consideration.
+#block(
+  height: 0.3cm,
+  width: 10cm,
+  fill: luma(230),
+  inset: 8pt,
+  radius: 4pt,
+  align(horizon + center,fit-to-width(lorem(2))),
+)
+When you can use auto for height.
+#block(
+  height: auto,
+  width: 10cm,
+  fill: luma(230),
+  inset: 8pt,
+  radius: 4pt,
+  align(horizon + center,fit-to-width(lorem(2))),
+)
