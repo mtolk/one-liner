@@ -34,5 +34,14 @@ the entire width of space will be used.
 *min-text-size* of type length. It has a default of 4pt. When fit-to-width is limited by the min-text-size you will see that the text will wrap,
 because the min-text-size is bigger than the size that would be required to prevent wrapping.
 
+## Changelog
+
+### 0.2.0 
+- Also take available height into consideration when calculating scale ratio.
+- Added checks on the parameters
+
+### 0.1.0 
+- Initial version
+
 ## Disclaimer
 This package was only tested in a few of my own documents and only to fit text. Not tested with other content yet.
