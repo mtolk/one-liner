@@ -38,7 +38,6 @@ because the min-text-size is bigger than the size that would be required to prev
 
 ### 0.2.0 
 - Also take available height into consideration when calculating scale ratio.
-- Added checks on the parameters
 
 ### 0.1.0 
 - Initial version
