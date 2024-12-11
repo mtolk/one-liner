@@ -45,8 +45,6 @@ There is also a default max size, which you can override as done here: 100pt.
   fit-to-width(max-text-size: 100pt, align(horizon + center)[A]),
 )
 
-#align(center + bottom ,fit-to-width( max-text-size: 70pt,   upper[_experiment_]))
-
 #fit-to-width[] /*test case to see what happens if you add empty content*/
 
 If there is a fixed height, it will also take that into consideration.
@@ -54,7 +52,7 @@ If there is a fixed height, it will also take that into consideration.
   height: 0.3cm,
   width: 10cm,
   fill: luma(230),
-  inset: 8pt,
+  inset: 0pt,
   radius: 4pt,
   align(horizon + center,fit-to-width(lorem(2))),
 )
