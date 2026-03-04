@@ -1,9 +1,9 @@
 #let fit-to-width(max-text-size: auto, min-text-size: 4pt, it) = context {
   let effective-max-text-size = if max-text-size == auto { 
-		text.size 
+			text.size 
 		} else { 
 			max-text-size 
-			}
+		}
 
   let contentsize = measure(it)
   layout(size =>{
