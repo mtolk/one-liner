@@ -1,5 +1,10 @@
-#let fit-to-width( max-text-size: 64pt, min-text-size: 4pt, it) = context {
-  
+#let fit-to-width(max-text-size: auto, min-text-size: 4pt, it) = context {
+  let effective-max-text-size = if max-text-size == auto { 
+			text.size * 3
+		} else { 
+			max-text-size 
+		}
+
   let contentsize = measure(it)
   layout(size =>{
 	if contentsize.width > 0pt { // Prevent failure on empty content 
@@ -14,8 +19,8 @@
 		let newx = contentsize.width*ratio
 		let newy = contentsize.height*ratio
 		let suggestedtextsize = 1em*ratio
-		if (suggestedtextsize + 0pt).to-absolute() > max-text-size {
-		  suggestedtextsize = max-text-size
+		if (suggestedtextsize + 0pt).to-absolute() > effective-max-text-size {
+		  suggestedtextsize = effective-max-text-size
 		}
 		if (suggestedtextsize + 0pt).to-absolute() < min-text-size {
 		  suggestedtextsize = min-text-size
