@@ -1,6 +1,6 @@
 #let fit-to-width(max-text-size: auto, min-text-size: 4pt, it) = context {
   let effective-max-text-size = if max-text-size == auto { 
-			text.size 
+			text.size * 3
 		} else { 
 			max-text-size 
 		}
