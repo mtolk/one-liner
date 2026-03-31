@@ -41,15 +41,20 @@ The current version(0.3.0) one-liner contains 3 functions: fit-to-width that can
 Here we have a block of specific dimensions. Using fit-to-width will change the font-size of the content passed 
 to fit-to-width so it will fit the full width without wrapping the content.
 
-![Example1](./example1.png "Example1 of Typst one-liner: fit-to-width")
+![Example1](https://github.com/mtolk/one-liner/blob/master/example1.png "Example1 of Typst one-liner: fit-to-width")
+
+
+> [!CAUTION]
+> This package currently only works for target paged(for PDF, PNG, and SVG export).
+> target HTML will result in an empty div element
 
 ## fit-to-width function
 Besides content the function has two parameters:
 
-*max-text-size* of type length. It has a default of 64pt. When fit-to-width is limited by the max-text-size you will see that not
+*max-text-size* of type length. It has a default of 3 times the current text size. When fit-to-width is limited by the max-text-size you will see that not
 the entire width of space will be used.
 
-*min-text-size* of type length. It has a default of 4pt. When fit-to-width is limited by the min-text-size you will see that the text will wrap,
+*min-text-size* of type length. It has a default of 0.33 times the current text size. When fit-to-width is limited by the min-text-size you will see that the text will wrap,
 because the min-text-size is bigger than the size that would be required to prevent wrapping.
 
 ## Changelog

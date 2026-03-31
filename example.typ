@@ -1,5 +1,5 @@
 
-#import "lib.typ": fit-to-width
+#import "lib.typ": *
 //#import "@local/one-liner:0.2.0": fit-to-width
 
 useful for slides or titles use full width
@@ -32,7 +32,7 @@ In this case text starts wrapping.
   inset: 8pt,
   clip: true,
   radius: 4pt,
-  fit-to-width(align(top + left,lorem(2000))),
+  fit-to-width(min-text-size: 4pt,align(top + left,lorem(1000))),
 )
 
 There is also a default max size, which you can override as done here: 100pt.

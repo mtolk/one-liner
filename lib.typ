@@ -1,9 +1,15 @@
 #let fit-to-width(max-text-size: auto, min-text-size: 4pt, it) = context {
   let effective-max-text-size = if max-text-size == auto { 
-			text.size * 3
-		} else { 
-			max-text-size 
-		}
+		text.size * 3
+	} else { 
+		max-text-size 
+	}
+
+	let effective-min-text-size = if min-text-size == auto { 
+		text.size * 0.33
+	} else { 
+		min-text-size 
+	}
 
   let contentsize = measure(it)
   layout(size =>{
@@ -22,12 +28,23 @@
 		if (suggestedtextsize + 0pt).to-absolute() > effective-max-text-size {
 		  suggestedtextsize = effective-max-text-size
 		}
-		if (suggestedtextsize + 0pt).to-absolute() < min-text-size {
-		  suggestedtextsize = min-text-size
+		if (suggestedtextsize + 0pt).to-absolute() < effective-min-text-size {
+		  suggestedtextsize = effective-min-text-size
 		}
-		set text(size:suggestedtextsize)
-		it
+		text(size:suggestedtextsize,it)
 	}
     
   })
+}
+
+#let grow-to-width(max-text-size: auto,  it) = context {
+	//set minimal size to current size so it never shrinks and only grows.
+	let current-text-size = text.size
+	fit-to-width(max-text-size: max-text-size,min-text-size: current-text-size,it)
+}
+
+#let shrink-to-width(min-text-size: auto,  it) = context {
+	//set minimal size to current size so it never shrinks and only grows.
+	let current-text-size = text.size
+	fit-to-width(max-text-size: current-text-size,min-text-size: min-text-size,it)
 }
