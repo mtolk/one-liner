@@ -65,3 +65,28 @@ When you can use auto for height.
   radius: 4pt,
   align(horizon + center,fit-to-width(lorem(2))),
 )
+
+Sometimes you want textsize to increase when space is available, but not become smaller. Then you can use grow-to-width.
+This can put more emphasis on this text.
+#block(
+  height: auto,
+  width: 10cm,
+  fill: luma(230),
+  inset: 8pt,
+  radius: 4pt,
+  align(horizon + center,grow-to-width(lorem(2))),
+)
+
+Sometimes you want textsize to decrease when space is available, but not become bigger. Then you can use shrink-to-width. If it must fit on the one line.
+#block(
+  height: auto,
+  width: 10cm,
+  fill: luma(230),
+  inset: 8pt,
+  radius: 4pt,
+  align(horizon + center,shrink-to-width(lorem(10))),
+)
+
+
+
+

@@ -1,14 +1,14 @@
 # One-liner typst package
 
-One-liner is a package containing a helper function to fit text to the available width, without wrapping, by 
+One-liner is a package containing helper functions to fit text to the available width, without wrapping, by 
 adjusting the text size based upon the context. This is useful in templates where you 
 don't know the length of text that is supposed to fit in specific locations in your template.
 
 ## Example
-The current version(0.1.0) one-liner contains 1 function: fit-to-width that can used as follows:
+The current version(0.3.0) one-liner contains 3 functions: fit-to-width that can used as follows:
 
 ```typst
-#import "@preview/one-liner:0.1.0": fit-to-width 
+#import "@preview/one-liner:0.3.0": fit-to-width 
 
 #block(
   height: 3cm,
@@ -17,6 +17,24 @@ The current version(0.1.0) one-liner contains 1 function: fit-to-width that can 
   inset: 8pt,
   radius: 4pt,
   align(horizon + center,fit-to-width(lorem(2))),
+)
+
+#block(
+  height: 3cm,
+  width: 10cm,
+  fill: luma(230),
+  inset: 8pt,
+  radius: 4pt,
+  align(horizon + center,grow-to-width(lorem(2))),
+)
+
+#block(
+  height: 3cm,
+  width: 10cm,
+  fill: luma(230),
+  inset: 8pt,
+  radius: 4pt,
+  align(horizon + center,shrink-to-width(lorem(2))),
 )
 ```
 
@@ -35,6 +53,10 @@ the entire width of space will be used.
 because the min-text-size is bigger than the size that would be required to prevent wrapping.
 
 ## Changelog
+
+### 0.3.0
+- changed the default values of *max-text-size* and *min-text-size* to a relative of current text-size instead of fixed pt sizes.
+- added functions shrink-to-width and grow-to-width
 
 ### 0.2.0 
 - Also take available height into consideration when calculating scale ratio.
