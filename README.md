@@ -41,12 +41,12 @@ The current version(0.3.0) one-liner contains 3 functions: fit-to-width that can
 Here we have a block of specific dimensions. Using fit-to-width will change the font-size of the content passed 
 to fit-to-width so it will fit the full width without wrapping the content.
 
-![Example1](https://github.com/mtolk/one-liner/blob/master/example1.png "Example1 of Typst one-liner: fit-to-width")
+![Example image of fit-to-with result](./example1.png "Example1 of Typst one-liner: fit-to-width")
 
 
-> [!CAUTION]
-> This package currently only works for target paged(for PDF, PNG, and SVG export).
-> target HTML will result in an empty div element
+## CAUTION
+This package currently only works for target paged(for PDF, PNG, and SVG export).
+Target HTML will result in an empty div element
 
 ## fit-to-width function
 Besides content the function has two parameters:

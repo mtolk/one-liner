@@ -1,6 +1,6 @@
 
-#import "lib.typ": *
-//#import "@local/one-liner:0.2.0": fit-to-width
+#import "@preview/one-liner:0.3.0": *
+//#import "@local/one-liner:0.3.0": *
 
 useful for slides or titles use full width
 Things that need to be as big as possible to grab attention.
