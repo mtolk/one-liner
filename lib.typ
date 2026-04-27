@@ -44,7 +44,27 @@
 }
 
 #let shrink-to-width(min-text-size: auto,  it) = context {
-	//set minimal size to current size so it never shrinks and only grows.
+	//set maximal size to current size so it never grows and only shrinks.
 	let current-text-size = text.size
 	fit-to-width(max-text-size: current-text-size,min-text-size: min-text-size,it)
+}
+
+// Only scale in x direction, never smaller than min-x-scale and never larger than 100% (no scaling up)
+#let squeeze-to-width(min-x-scale: 50%, it) = context {
+  let contentsize = measure(it)
+  layout(size =>{
+    if contentsize.width > 0pt {
+      // Prevent failure on empty content
+      let ratio-x = size.width / contentsize.width
+      let min-ratio-x = min-x-scale / 100%
+      let effective-ratio-x = if ratio-x < min-ratio-x {
+        min-ratio-x
+      } else if ratio-x > 1 {
+        1
+      } else {
+        ratio-x
+      }
+      scale(x: 100% * effective-ratio-x, y: 100%, reflow: true, it)
+    }
+  })
 }
